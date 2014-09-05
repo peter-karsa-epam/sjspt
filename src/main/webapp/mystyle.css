@@ -1,0 +1,152 @@
+@font-face {
+	font-family: myFirstFont;
+	src: url('Starjedi.ttf');
+}
+
+body {
+	font-family: myFirstFont;
+	background-image: url('space.jpg');
+	background-attachment: fixed;
+	text-shadow: 0.1em 0.1em 0.05em #333
+}
+
+#timeP {
+	font-family: myFirstFont;
+	color: #F8FF06;
+}
+
+#battleId {
+	display: none;
+}
+
+.main {
+	text-align: center;
+	width: 75%;
+	margin: auto;
+	background-color: #000000;
+	border: 1px;
+	border-style: solid;
+	border-color: #A5A5A5;
+}
+
+.contentType {
+	overflow: hidden;
+	font-family: myFirstFont;
+	text-align: center;
+	width: 75%;
+	margin: auto;
+	background-color: #000000;
+	border: 3px;
+	border-style: solid;
+	border-radius: 15px;
+	border-color: #ffff00;
+	margin-top: 5px;
+	padding: 4px;
+	font-family: myFirstFont;
+}
+
+.contentTitle {
+	margin-top: 3px;
+	font-family: myFirstFont;
+	background-color: #FFFFFF;
+	border: 3px;
+	border-style: solid;
+	border-radius: 15px;
+	font-family: myFirstFont;
+}
+
+.menu {
+	font-family: myFirstFont;
+	background-color: #848484;
+	height: 40px;
+	table-layout: fixed;
+}
+
+h1 {
+	font-family: myFirstFont;
+	font-size: 75px;
+	margin: auto;
+	color: #F8FF06;
+	text-shadow: 5px 5px #000000;
+	display: inline;
+}
+
+h2 {
+	font-family: myFirstFont;
+	background-color: #FFFFFF;
+	text-align: center;
+	font-size: 20px;
+	margin: auto;
+	display: inline;
+}
+
+h4 {
+	color: #f9f900;
+}
+
+table, th, td {
+	text-align: center;
+	font-family: myFirstFont;
+	border-collapse: collapse;
+	width: 100%;
+	border: 1px solid yellow;
+	height: 100%;
+	color: white;
+	font-family: myFirstFont;
+}
+
+td {
+	width: 25%;
+}
+
+a:link {
+	font-family: myFirstFont;
+	font-family: verdana;
+	color: #FFFFFF;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+a:visited {
+	font-family: myFirstFont;
+	color: #FFFFFF;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+a:hover {
+	font-family: myFirstFont;
+	color: #A8F3FF;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+a:active {
+	font-family: myFirstFont;
+	color: #FFFFFF;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+button {
+	margin: 10px;
+	padding: 5px;
+}
+
+table#armyTable {
+	float: left;
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+table#armyTable td {
+	height: 10px;
+	background-color: #737373;
+}
+
+.details {
+	font-family: myFirstFont;
+	font-size: 13px;
+	color: #ffff00;
+}

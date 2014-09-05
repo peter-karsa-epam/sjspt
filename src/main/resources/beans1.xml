@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+	                       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd">
+
+	<bean id="sithArmy" class="com.epam.jjp.sc.domain.Army"
+		p:forceUsers-ref="siths">
+		<constructor-arg ref="darthNihilus" />
+		<constructor-arg>
+			<map>
+				<entry key="OFFENCE">
+					<list>
+						<ref bean="trooper" />
+						<ref bean="trooper" />
+						<ref bean="trooper" />
+						<ref bean="trooper" />
+						<ref bean="trooper" />
+						<ref bean="trooper" />
+					</list>
+				</entry>
+				<entry key="DEFENCE">
+					<list>
+						<ref bean="trooper" />
+						<ref bean="trooper" />
+						<ref bean="trooper" />
+						<ref bean="trooper" />
+						<ref bean="trooper" />
+						<ref bean="trooper" />
+					</list>
+				</entry>
+			</map>
+		</constructor-arg>
+	</bean>
+
+	<bean id="jediArmy" class="com.epam.jjp.sc.domain.Army"
+		p:forceUsers-ref="jedis">
+		<constructor-arg ref="starkiller" />
+		<constructor-arg>
+			<map>
+				<entry key="OFFENCE">
+					<list>
+						<ref bean="rebelSoldier" />
+						<ref bean="rebelSoldier" />
+						<ref bean="rebelSoldier" />
+						<ref bean="rebelSoldier" />
+						<ref bean="rebelSoldier" />
+						<ref bean="rebelSoldier" />
+					</list>
+				</entry>
+				<entry key="DEFENCE">
+					<list>
+						<ref bean="rebelSoldier" />
+						<ref bean="rebelSoldier" />
+						<ref bean="rebelSoldier" />
+						<ref bean="rebelSoldier" />
+						<ref bean="rebelSoldier" />
+						<ref bean="rebelSoldier" />
+					</list>
+				</entry>
+			</map>
+		</constructor-arg>
+	</bean>
+
+	<bean id="theBigBattle" class="com.epam.jjp.sc.domain.BattleAtYavin"
+		c:_0="New Battle for Glory" c:_1-ref="deathStar"></bean>
+
+	<bean id="deathStar" class="com.epam.jjp.sc.domain.BattleField"
+		c:_0="Inside the DeathStar" c:_1-ref="armiesAtYavin"></bean>
+
+	<util:list id="armiesAtYavin">
+		<ref bean="jediArmy" />
+		<ref bean="sithArmy" />
+	</util:list>
+
+	<util:list id="jedis">
+		<ref bean="starkiller" />
+		<ref bean="aylasecurra" />
+		<ref bean="mastervrook" />
+	</util:list>
+
+	<util:list id="siths">
+		<ref bean="darthNihilus" />
+		<ref bean="darthTraya" />
+		<ref bean="darthSion" />
+	</util:list>
+
+	<bean id="starkiller" class="com.epam.jjp.sc.domain.Jedi" c:_0="Starkiller"
+		c:_1="MALE" c:_2="200" autowire="byType" p:lightSabre-ref="slicer">
+	</bean>
+
+	<bean id="aylasecurra" class="com.epam.jjp.sc.domain.Jedi" c:_0="Ayla Securra"
+		c:_1="FEMALE" c:_2="170" autowire="byType" p:lightSabre-ref="slicer">
+	</bean>
+
+	<bean id="mastervrook" class="com.epam.jjp.sc.domain.Jedi" c:_0="Master Vrook"
+		c:_1="MALE" c:_2="170" autowire="byType" p:lightSabre-ref="slicer">
+	</bean>
+
+	<bean id="darthNihilus" class="com.epam.jjp.sc.domain.Sith" c:_0="Darth Nihilus"
+		c:_1="MALE" c:_2="220" p:lightSabre-ref="dagger">
+	</bean>
+
+	<bean id="darthTraya" class="com.epam.jjp.sc.domain.Sith" c:_0="Darth Traya"
+		c:_1="FEMALE" c:_2="200" p:lightSabre-ref="dagger">
+	</bean>
+
+	<bean id="darthSion" class="com.epam.jjp.sc.domain.Sith" c:_0="Darth Sion"
+		c:_1="MALE" c:_2="300" p:lightSabre-ref="dagger">
+	</bean>
+
+	<bean id="trooper" class="com.epam.jjp.sc.domain.Trooper" scope="prototype"
+		c:_0="NO NAME" c:_1="MALE" c:_2="50" p:weapon-ref="blaster">
+	</bean>
+
+	<bean id="rebelSoldier" class="com.epam.jjp.sc.domain.RebelSoldier"
+		scope="prototype" c:_0="Jimmy" c:_1="MALE" c:_2="40" p:weapon-ref="blaster">
+	</bean>
+
+	<bean id="slicer" class="com.epam.jjp.sc.domain.LightSabre" c:_0="Slicer"
+		c:_1="#{T(java.lang.Math).random() * 60 + 20}">
+	</bean>
+
+	<bean id="dagger" class="com.epam.jjp.sc.domain.LightSabre" c:_0="Dagger"
+		c:_1="#{T(java.lang.Math).random() * 30 + 20}" scope="prototype"
+		primary="true">
+	</bean>
+
+	<bean id="blaster" class="com.epam.jjp.sc.domain.BlastGun" scope="prototype"
+		c:_0="BLASTER" c:_1="#{T(java.lang.Math).random() * 10 + 10}">
+	</bean>
+
+	<!-- <bean id="factoryBean" class="com.epam.jjp.sc.domain.BlastGunFactoryBean" -->
+	<!-- scope="singleton" c:_0="40"></bean> -->
+</beans>
