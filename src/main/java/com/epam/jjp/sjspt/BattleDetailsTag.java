@@ -21,6 +21,10 @@ public class BattleDetailsTag extends SimpleTagSupport {
 		List<String> details = battle.getSo().getLogBattleAction();
 
 		JSONObject obj = new JSONObject();
+		// do this differently
+		//or something
+		
+		
 		JSONArray list = new JSONArray();
 		obj.put("messages", list);
 
